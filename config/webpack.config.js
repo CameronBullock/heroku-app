@@ -25,20 +25,19 @@ module.exports = {
         include: [ path.join(__dirname, "..", "client")],
         options: { cacheDirectory: true }
       },
+
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'url-loader',
-        include: [ path.join(__dirname, "..", "client")],
-        options: {
-          limit: 25000
-        }
-      },
-      { 
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-        loader:"url-loader", 
-        query: { 
-          limit: 10000, 
-          mimetype: "application/font-woff" 
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      loader: 'url-loader',
+      include: [ path.join(__dirname, "..", "client")],
+  },
+
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader:"url-loader",
+        query: {
+          limit: 10000,
+          mimetype: "application/font-woff"
         }
       },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
